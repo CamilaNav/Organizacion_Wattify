@@ -168,26 +168,22 @@ var lineChart = new Chart(lineCtx, {
 
 
 // Obtener la fecha actual en el huso horario GMT-05:00 (Lima, Perú)
-var fechaActual = new Date().toLocaleString("en-US", { timeZone: "America/Lima" });
+var fechaActual = new Date();
 
 // Obtener el primer y último día de la semana actual
-var fechaActualObj = new Date(fechaActual);
-var primerDiaSemana = fechaActualObj.getDate() - fechaActualObj.getDay();
-var ultimoDiaSemana = primerDiaSemana + 7;
+var primerDiaSemana = fechaActual.getDate() - fechaActual.getDay() + 1;
+var ultimoDiaSemana = primerDiaSemana + 6;
 
-var primerDiaSemanaObj = new Date(fechaActualObj.setDate(primerDiaSemana));
-var ultimoDiaSemanaObj = new Date(fechaActualObj.setDate(ultimoDiaSemana));
+var primerDiaSemanaObj = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), primerDiaSemana);
+var ultimoDiaSemanaObj = new Date(fechaActual.getFullYear(), fechaActual.getMonth(), ultimoDiaSemana);
 
 // Formatear las fechas en formato dd/mm/aaaa
 var primerDiaSemanaFormatted = primerDiaSemanaObj.toLocaleDateString("es-ES");
 var ultimoDiaSemanaFormatted = ultimoDiaSemanaObj.toLocaleDateString("es-ES");
 
 // Obtener el nombre del mes y el año actual
-var nombreMesActual = fechaActualObj.toLocaleDateString("es-ES", { month: "long" });
-var anioActual = fechaActualObj.getFullYear();
-
-// Obtener el año actual
-var anioActual = fechaActualObj.getFullYear();
+var nombreMesActual = fechaActual.toLocaleDateString("es-ES", { month: "long" });
+var anioActual = fechaActual.getFullYear();
 
 // Crear los textos deseados
 var textoRangoSemana = "Desde " + primerDiaSemanaFormatted + " hasta " + ultimoDiaSemanaFormatted;
@@ -198,6 +194,7 @@ var textoAnioActual = anioActual;
 console.log("Rango de la semana actual:", textoRangoSemana);
 console.log("Mes actual:", textoMesActual);
 console.log("Año actual:", textoAnioActual);
+
 
 function actualizarInformacion() {
     // Obtener los elementos en los que deseas mostrar la información
