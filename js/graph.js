@@ -107,22 +107,22 @@ function filterData(day) {
             {
                 label: 'Dispositivo 1',
                 data: [originalData.datasets[0].data[originalData.labels.indexOf(day)]],
-                backgroundColor: 'rgba(102, 102, 102, 1)',
-                hoverBackgroundColor: 'rgba(255, 214, 10, 1)',
+                backgroundColor: 'rgba(211, 160, 7, 1)',
+                hoverBackgroundColor: 'rgba(102, 102, 102, 1)',
                 borderWidth: 1
             },
             {
                 label: 'Dispositivo 2',
                 data: [originalData.datasets[1].data[originalData.labels.indexOf(day)]],
-                backgroundColor: 'rgba(140, 140, 140, 1)',
-                hoverBackgroundColor: 'rgba(255, 214, 10, 1)',
+                backgroundColor: 'rgba(239, 184, 16, 1)',
+                hoverBackgroundColor: 'rgba(102, 102, 102, 1)',
                 borderWidth: 1
             },
             {
                 label: 'Dispositivo 3',
                 data: [originalData.datasets[2].data[originalData.labels.indexOf(day)]],
-                backgroundColor: 'rgba(181, 181, 181, 1)',
-                hoverBackgroundColor: 'rgba(255, 214, 10, 1)',
+                backgroundColor: 'rgba(249, 219, 74, 1)',
+                hoverBackgroundColor: 'rgba(102, 102, 102, 1)',
                 borderWidth: 1
             }
         ]
